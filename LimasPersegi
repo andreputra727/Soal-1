@@ -1,0 +1,38 @@
+package source.utp.mains.shapes;
+
+public class LimasPersegi extends BangunRuang {
+    private double sisi;
+
+    public LimasPersegi(double sisi, double tinggi) {
+        this.sisi = sisi;
+        this.tinggi = tinggi;
+        setNama("Limas Persegi");
+    }
+
+    @Override
+    public double getLuasPermukaan() {
+        double ts = Math.sqrt((sisi / 2) * (sisi / 2) + tinggi * tinggi);
+        double ls = ts * sisi / 2;
+        double la = sisi * sisi;
+        return 4 * ls + la;
+    }
+
+    @Override
+    public double getVolume() {
+        double la = sisi * sisi;
+        return la * tinggi / 3;
+    }
+
+    public double getLuasAlas() {
+        return sisi * sisi;
+    }
+
+    public double getLuasSegitiga() {
+        double ts = Math.sqrt((sisi / 2) * (sisi / 2) + tinggi * tinggi);
+        return ts * sisi / 2;
+    }
+
+    public double getTinggiSegitiga() {
+        return Math.sqrt((sisi / 2) * (sisi / 2) + tinggi * tinggi);
+    }
+}

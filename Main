@@ -1,0 +1,55 @@
+package source.utp.mains;
+
+import java.util.Scanner;
+import source.utp.mains.shapes.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("==============================================");
+        System.out.println("Kalkulator Bangun Ruang");
+        System.out.println("ANDRE SYAPUTRA SIREGAR");
+        System.out.println("245150707111045");
+        System.out.println("==============================================");
+
+        
+        System.out.println("Prisma Segitiga Sama Kaki");
+        System.out.println("==============================================");
+        System.out.print("Isikan alas   : ");
+        double alas = sc.nextDouble();
+        System.out.print("Isikan kaki   : ");
+        double kaki = sc.nextDouble();
+        System.out.print("Isikan tinggi : ");
+        double tinggiPrisma = sc.nextDouble();
+        PrismaSegitigaSamaKaki prisma = new PrismaSegitigaSamaKaki(alas, kaki, tinggiPrisma);
+        System.out.println("==============================================");
+        prisma.printInfo();
+        System.out.println("==============================================");
+
+        
+        System.out.println("Limas Persegi");
+        System.out.println("==============================================");
+        System.out.print("Isikan sisi   : ");
+        double sisi = sc.nextDouble();
+        System.out.print("Isikan tinggi : ");
+        double tinggiLimas = sc.nextDouble();
+        LimasPersegi limas = new LimasPersegi(sisi, tinggiLimas);
+        System.out.println("==============================================");
+        limas.printInfo();
+        System.out.println("==============================================");
+
+        
+        System.out.println("Tabung");
+        System.out.println("==============================================");
+        System.out.print("Isikan radius : ");
+        double radius = sc.nextDouble();
+        System.out.print("Isikan tinggi : ");
+        double tinggiTabung = sc.nextDouble();
+        Tabung tabung = new Tabung();
+        tabung.setRadius(radius);
+        tabung.setTinggi(tinggiTabung);
+        System.out.println("==============================================");
+        tabung.printInfo();
+        System.out.println("==============================================");
+    }
+}

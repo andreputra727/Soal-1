@@ -1,0 +1,40 @@
+package source.utp.mains.shapes;
+
+public class PrismaSegitigaSamaKaki extends BangunRuang {
+    private double alas;
+    private double kaki;
+
+    public PrismaSegitigaSamaKaki(double alas, double kaki, double tinggi) {
+        this.alas = alas;
+        this.kaki = kaki;
+        this.tinggi = tinggi;
+        setNama("Prisma Segitiga Sama Kaki");
+    }
+
+    @Override
+    public double getLuasPermukaan() {
+        double ta = Math.sqrt(kaki * kaki - (alas * alas) / 4);
+        double la = ta * alas / 2;
+        double k = 2 * kaki + alas;
+        return 2 * la + k * tinggi;
+    }
+
+    @Override
+    public double getVolume() {
+        double ta = Math.sqrt(kaki * kaki - (alas * alas) / 4);
+        double la = ta * alas / 2;
+        return la * tinggi;
+    }
+
+    public double getTinggiSegitiga() {
+        return Math.sqrt(kaki * kaki - (alas * alas) / 4);
+    }
+
+    public double getLuasAlas() {
+        return getTinggiSegitiga() * alas / 2;
+    }
+
+    public double getKeliling() {
+        return 2 * kaki + alas;
+    }
+}

@@ -1,0 +1,36 @@
+package source.utp.mains.shapes;
+
+public class Tabung extends BangunRuang {
+    private double radius;
+    private static final int PEMBILANG = 22;
+    private static final int PENYEBUT = 7;
+
+    public Tabung() {
+        setNama("Tabung");
+    }
+
+    public void setRadius(double inputRadius) {
+        this.radius = inputRadius;
+    }
+
+    @Override
+    public double getLuasPermukaan() {
+        double la = radius * radius * PEMBILANG / PENYEBUT;
+        double k = 2 * radius * PEMBILANG / PENYEBUT;
+        return 2 * la + k * tinggi;
+    }
+
+    @Override
+    public double getVolume() {
+        double la = radius * radius * PEMBILANG / PENYEBUT;
+        return la * tinggi;
+    }
+
+    public double getLuasAlas() {
+        return radius * radius * PEMBILANG / PENYEBUT;
+    }
+
+    public double getKeliling() {
+        return 2 * radius * PEMBILANG / PENYEBUT;
+    }
+}
